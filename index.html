@@ -8,19 +8,19 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f5faff;
+  background: linear-gradient(to bottom, #e0f7ff, #ffffff);
 }
 
 header {
   background: linear-gradient(to right, #4facfe, #00c6ff);
   color: white;
-  padding: 40px 20px;
+  padding: 50px 20px;
   text-align: center;
 }
 
 header h1 {
   margin: 0;
-  font-size: 40px;
+  font-size: 42px;
 }
 
 header p {
@@ -33,7 +33,7 @@ header p {
 }
 
 section {
-  padding: 40px 20px;
+  padding: 50px 20px;
   text-align: center;
 }
 
@@ -47,22 +47,54 @@ section {
 .card {
   background: white;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 12px;
   width: 220px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
 }
 
-.cta {
+.card:hover {
+  transform: scale(1.05);
+}
+
+.form-section {
   background: #00c6ff;
   color: white;
-  padding: 40px;
+  padding: 50px 20px;
 }
 
-.cta a {
-  display: inline-block;
-  margin-top: 15px;
+form {
+  max-width: 400px;
+  margin: auto;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+}
+
+button {
   background: white;
   color: #00c6ff;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #f0f0f0;
+}
+
+.call-btn {
+  display: inline-block;
+  margin-top: 15px;
+  background: #00c6ff;
+  color: white;
   padding: 12px 20px;
   border-radius: 6px;
   text-decoration: none;
@@ -73,10 +105,8 @@ footer {
   background: #333;
   color: white;
   padding: 15px;
-  text-align: center;
 }
 </style>
-
 </head>
 
 <body>
@@ -87,6 +117,7 @@ footer {
   <div class="badges">
     ⭐ 10+ Years Experience | Affordable Prices | Satisfaction Guaranteed
   </div>
+  <a class="call-btn" href="tel:13528047698">📞 Call (352) 804-7698</a>
 </header>
 
 <section>
@@ -110,10 +141,21 @@ footer {
   </p>
 </section>
 
-<section class="cta">
-  <h2>Call Us Today!</h2>
-  <p style="font-size: 24px;">(352) 804-7698</p>
-  <a href="tel:13528047698">Call Now</a>
+<section class="form-section">
+  <h2>Get a Free Quote</h2>
+
+  <!-- IMPORTANT: Replace with your Formspree link -->
+  <form action="https://formspree.io/f/yourformid" method="POST">
+
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+
+    <textarea name="message" placeholder="What service do you need?"></textarea>
+
+    <button type="submit">Submit Request</button>
+  </form>
+
 </section>
 
 <footer>
