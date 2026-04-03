@@ -4,39 +4,93 @@
 <meta charset="UTF-8">
 <title>Persaud Family Cleaning | Ocala, FL</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #e0f7ff, #ffffff);
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(180deg, #dff6ff, #ffffff);
+  overflow-x: hidden;
 }
 
-header {
-  background: linear-gradient(to right, #4facfe, #00c6ff);
-  color: white;
-  padding: 50px 20px;
-  text-align: center;
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 42px;
-}
-
-header p {
-  font-size: 18px;
-}
-
-.badges {
-  margin-top: 10px;
+nav a {
+  text-decoration: none;
+  color: #333;
   font-weight: bold;
 }
 
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(to right, #4facfe, #00c6ff);
+  color: white;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+}
+
+.cta-btn {
+  margin-top: 20px;
+  display: inline-block;
+  background: white;
+  color: #00c6ff;
+  padding: 14px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
+}
+
+/* BUBBLES */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  animation: float 10s infinite ease-in-out;
+}
+
+.bubble:nth-child(1) { width: 80px; height: 80px; left: 10%; top: 70%; }
+.bubble:nth-child(2) { width: 50px; height: 50px; left: 80%; top: 60%; }
+.bubble:nth-child(3) { width: 100px; height: 100px; left: 50%; top: 80%; }
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-40px); }
+  100% { transform: translateY(0px); }
+}
+
+/* SECTION */
 section {
-  padding: 50px 20px;
+  padding: 60px 20px;
   text-align: center;
 }
 
+/* SERVICES */
 .services {
   display: flex;
   flex-wrap: wrap;
@@ -45,22 +99,22 @@ section {
 }
 
 .card {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 15px;
   width: 220px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
+  transition: 0.3s;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: translateY(-10px);
 }
 
+/* FORM */
 .form-section {
-  background: #00c6ff;
+  background: linear-gradient(to right, #00c6ff, #4facfe);
   color: white;
-  padding: 50px 20px;
 }
 
 form {
@@ -73,7 +127,7 @@ input, textarea {
   padding: 12px;
   margin: 10px 0;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 button {
@@ -81,44 +135,43 @@ button {
   color: #00c6ff;
   padding: 12px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
 }
 
-button:hover {
-  background: #f0f0f0;
-}
-
-.call-btn {
-  display: inline-block;
-  margin-top: 15px;
-  background: #00c6ff;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
+/* FOOTER */
 footer {
-  background: #333;
+  background: #111;
   color: white;
-  padding: 15px;
+  padding: 20px;
+}
+
+/* MOBILE */
+@media(max-width: 600px) {
+  .hero h1 {
+    font-size: 32px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<nav>
+  <div><strong>Persaud Cleaning</strong></div>
+  <div><a href="#contact">Get Quote</a></div>
+</nav>
+
+<div class="hero">
   <h1>Persaud Family Cleaning</h1>
-  <p>Family-Owned Cleaning Services in Ocala, Florida</p>
-  <div class="badges">
-    ⭐ 10+ Years Experience | Affordable Prices | Satisfaction Guaranteed
-  </div>
-  <a class="call-btn" href="tel:13528047698">📞 Call (352) 804-7698</a>
-</header>
+  <p>10+ Years Experience • Family-Owned • Satisfaction Guaranteed</p>
+  <a href="#contact" class="cta-btn">Get a Free Quote</a>
+
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+</div>
 
 <section>
   <h2>Our Services</h2>
@@ -134,32 +187,30 @@ footer {
 <section>
   <h2>Why Choose Us?</h2>
   <p>
-    ✔ Family Owned & Trusted<br>
-    ✔ 10+ Years of Experience<br>
+    ✔ Trusted Family Business<br>
+    ✔ Affordable Pricing<br>
     ✔ Reliable & Professional<br>
     ✔ 100% Satisfaction Guarantee
   </p>
 </section>
 
-<section class="form-section">
+<section id="contact" class="form-section">
   <h2>Get a Free Quote</h2>
 
-  <!-- IMPORTANT: Replace with your Formspree link -->
   <form action="https://formspree.io/f/yourformid" method="POST">
-
     <input type="text" name="name" placeholder="Your Name" required>
-
     <input type="tel" name="phone" placeholder="Phone Number" required>
-
     <textarea name="message" placeholder="What service do you need?"></textarea>
-
     <button type="submit">Submit Request</button>
   </form>
 
+  <p style="margin-top:20px; font-size:18px;">
+    📞 (352) 804-7698
+  </p>
 </section>
 
 <footer>
-  <p>© 2026 Persaud Family Cleaning | Ocala, FL</p>
+  <p>© 2026 Persaud Family Cleaning | Ocala, Florida</p>
 </footer>
 
 </body>
